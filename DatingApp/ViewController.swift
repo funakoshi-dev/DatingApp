@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
+import FacebookCore
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController{
+    @IBOutlet weak var signInFacebookButton: UIButton!
+    @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var termsOfServiceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let loginButton = FBLoginButton()
+        loginButton.center = view.center
+        view.addSubview(loginButton)
     }
-
+   
+    
+   
+    
+    
 
 }
 

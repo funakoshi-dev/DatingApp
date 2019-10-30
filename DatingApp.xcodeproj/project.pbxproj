@@ -3,18 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05E11CDAE0FE5AF3C2BCBAB3 /* Pods_DatingApp_DatingAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7DDE20CE0FE64F7BB212A1 /* Pods_DatingApp_DatingAppUITests.framework */; };
+		1E1FE1F9EB08E3F95C4692FF /* Pods_DatingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57533A72935A51D9E507A4DF /* Pods_DatingAppTests.framework */; };
+		313A5C83236A1175006D665B /* TinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313A5C82236A1175006D665B /* TinderViewController.swift */; };
 		31E607532369653E003B0EF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E607522369653E003B0EF1 /* AppDelegate.swift */; };
 		31E607552369653E003B0EF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E607542369653E003B0EF1 /* SceneDelegate.swift */; };
 		31E607572369653E003B0EF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E607562369653E003B0EF1 /* ViewController.swift */; };
-		31E6075A2369653E003B0EF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E607582369653E003B0EF1 /* Main.storyboard */; };
 		31E6075C23696540003B0EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31E6075B23696540003B0EF1 /* Assets.xcassets */; };
 		31E6075F23696540003B0EF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E6075D23696540003B0EF1 /* LaunchScreen.storyboard */; };
 		31E6076A23696540003B0EF1 /* DatingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E6076923696540003B0EF1 /* DatingAppTests.swift */; };
 		31E6077523696540003B0EF1 /* DatingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E6077423696540003B0EF1 /* DatingAppUITests.swift */; };
+		31E60787236978C4003B0EF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E60786236978C4003B0EF1 /* Main.storyboard */; };
+		31E60789236978FB003B0EF1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E60788236978FB003B0EF1 /* SignUpViewController.swift */; };
+		31E6078B2369A6D3003B0EF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31E6078A2369A6D3003B0EF1 /* GoogleService-Info.plist */; };
+		31E6078C2369A6D3003B0EF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31E6078A2369A6D3003B0EF1 /* GoogleService-Info.plist */; };
+		31E6078D2369A6D3003B0EF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31E6078A2369A6D3003B0EF1 /* GoogleService-Info.plist */; };
+		31E607902369D07D003B0EF1 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E6078F2369D07D003B0EF1 /* UIViewController+Alert.swift */; };
+		70331A4A1A0ED10B238ADE8D /* Pods_DatingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E76632567C1330260AB1B8 /* Pods_DatingApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		313A5C82236A1175006D665B /* TinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewController.swift; sourceTree = "<group>"; };
 		31E6074F2369653E003B0EF1 /* DatingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E607522369653E003B0EF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31E607542369653E003B0EF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		31E607562369653E003B0EF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		31E607592369653E003B0EF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31E6075B23696540003B0EF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31E6075E23696540003B0EF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31E6076023696540003B0EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +58,19 @@
 		31E6077023696540003B0EF1 /* DatingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E6077423696540003B0EF1 /* DatingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingAppUITests.swift; sourceTree = "<group>"; };
 		31E6077623696540003B0EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31E60786236978C4003B0EF1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		31E60788236978FB003B0EF1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		31E6078A2369A6D3003B0EF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31E6078F2369D07D003B0EF1 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		46E76632567C1330260AB1B8 /* Pods_DatingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57533A72935A51D9E507A4DF /* Pods_DatingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DB6BC56588F9A3D167EA70E /* Pods-DatingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingApp.debug.xcconfig"; path = "Target Support Files/Pods-DatingApp/Pods-DatingApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B1A3496408C4148860F67957 /* Pods-DatingApp-DatingAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingApp-DatingAppUITests.release.xcconfig"; path = "Target Support Files/Pods-DatingApp-DatingAppUITests/Pods-DatingApp-DatingAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BA7DDE20CE0FE64F7BB212A1 /* Pods_DatingApp_DatingAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatingApp_DatingAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C12250E37C61B11F5E33EE04 /* Pods-DatingApp-DatingAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingApp-DatingAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-DatingApp-DatingAppUITests/Pods-DatingApp-DatingAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF87D5CB8003723962808797 /* Pods-DatingAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DatingAppTests/Pods-DatingAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D5D0E9DF75447148D1EF1270 /* Pods-DatingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingApp.release.xcconfig"; path = "Target Support Files/Pods-DatingApp/Pods-DatingApp.release.xcconfig"; sourceTree = "<group>"; };
+		F5908D9D7903A31490D2766A /* Pods-DatingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingAppTests.release.xcconfig"; path = "Target Support Files/Pods-DatingAppTests/Pods-DatingAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70331A4A1A0ED10B238ADE8D /* Pods_DatingApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E1FE1F9EB08E3F95C4692FF /* Pods_DatingAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E11CDAE0FE5AF3C2BCBAB3 /* Pods_DatingApp_DatingAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +108,8 @@
 				31E6076823696540003B0EF1 /* DatingAppTests */,
 				31E6077323696540003B0EF1 /* DatingAppUITests */,
 				31E607502369653E003B0EF1 /* Products */,
+				391E892DB6A6CBFC0900877C /* Pods */,
+				35A63F90DFD1006FDDF6FC27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +126,14 @@
 		31E607512369653E003B0EF1 /* DatingApp */ = {
 			isa = PBXGroup;
 			children = (
+				31E6078E2369D044003B0EF1 /* Extension */,
 				31E607522369653E003B0EF1 /* AppDelegate.swift */,
 				31E607542369653E003B0EF1 /* SceneDelegate.swift */,
 				31E607562369653E003B0EF1 /* ViewController.swift */,
-				31E607582369653E003B0EF1 /* Main.storyboard */,
+				31E60786236978C4003B0EF1 /* Main.storyboard */,
+				313A5C82236A1175006D665B /* TinderViewController.swift */,
+				31E60788236978FB003B0EF1 /* SignUpViewController.swift */,
+				31E6078A2369A6D3003B0EF1 /* GoogleService-Info.plist */,
 				31E6075B23696540003B0EF1 /* Assets.xcassets */,
 				31E6075D23696540003B0EF1 /* LaunchScreen.storyboard */,
 				31E6076023696540003B0EF1 /* Info.plist */,
@@ -128,6 +159,37 @@
 			path = DatingAppUITests;
 			sourceTree = "<group>";
 		};
+		31E6078E2369D044003B0EF1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				31E6078F2369D07D003B0EF1 /* UIViewController+Alert.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		35A63F90DFD1006FDDF6FC27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46E76632567C1330260AB1B8 /* Pods_DatingApp.framework */,
+				BA7DDE20CE0FE64F7BB212A1 /* Pods_DatingApp_DatingAppUITests.framework */,
+				57533A72935A51D9E507A4DF /* Pods_DatingAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		391E892DB6A6CBFC0900877C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DB6BC56588F9A3D167EA70E /* Pods-DatingApp.debug.xcconfig */,
+				D5D0E9DF75447148D1EF1270 /* Pods-DatingApp.release.xcconfig */,
+				C12250E37C61B11F5E33EE04 /* Pods-DatingApp-DatingAppUITests.debug.xcconfig */,
+				B1A3496408C4148860F67957 /* Pods-DatingApp-DatingAppUITests.release.xcconfig */,
+				CF87D5CB8003723962808797 /* Pods-DatingAppTests.debug.xcconfig */,
+				F5908D9D7903A31490D2766A /* Pods-DatingAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31E6077923696540003B0EF1 /* Build configuration list for PBXNativeTarget "DatingApp" */;
 			buildPhases = (
+				DB313B669B1B9184351E35AB /* [CP] Check Pods Manifest.lock */,
 				31E6074B2369653E003B0EF1 /* Sources */,
 				31E6074C2369653E003B0EF1 /* Frameworks */,
 				31E6074D2369653E003B0EF1 /* Resources */,
+				817053C67D2B197D28C23B47 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31E6077C23696540003B0EF1 /* Build configuration list for PBXNativeTarget "DatingAppTests" */;
 			buildPhases = (
+				C84EE3C545180D0CE4087586 /* [CP] Check Pods Manifest.lock */,
 				31E6076123696540003B0EF1 /* Sources */,
 				31E6076223696540003B0EF1 /* Frameworks */,
 				31E6076323696540003B0EF1 /* Resources */,
@@ -170,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31E6077F23696540003B0EF1 /* Build configuration list for PBXNativeTarget "DatingAppUITests" */;
 			buildPhases = (
+				DA948C0EB039ADF0B969BB4E /* [CP] Check Pods Manifest.lock */,
 				31E6076C23696540003B0EF1 /* Sources */,
 				31E6076D23696540003B0EF1 /* Frameworks */,
 				31E6076E23696540003B0EF1 /* Resources */,
+				FCC544A1E421E864886539A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,9 +299,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31E60787236978C4003B0EF1 /* Main.storyboard in Resources */,
+				31E6078B2369A6D3003B0EF1 /* GoogleService-Info.plist in Resources */,
 				31E6075F23696540003B0EF1 /* LaunchScreen.storyboard in Resources */,
 				31E6075C23696540003B0EF1 /* Assets.xcassets in Resources */,
-				31E6075A2369653E003B0EF1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31E6078C2369A6D3003B0EF1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,18 +318,125 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31E6078D2369A6D3003B0EF1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		817053C67D2B197D28C23B47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DatingApp/Pods-DatingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DatingApp/Pods-DatingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DatingApp/Pods-DatingApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C84EE3C545180D0CE4087586 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DatingAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA948C0EB039ADF0B969BB4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DatingApp-DatingAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB313B669B1B9184351E35AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DatingApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCC544A1E421E864886539A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DatingApp-DatingAppUITests/Pods-DatingApp-DatingAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DatingApp-DatingAppUITests/Pods-DatingApp-DatingAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DatingApp-DatingAppUITests/Pods-DatingApp-DatingAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		31E6074B2369653E003B0EF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31E607902369D07D003B0EF1 /* UIViewController+Alert.swift in Sources */,
 				31E607572369653E003B0EF1 /* ViewController.swift in Sources */,
+				313A5C83236A1175006D665B /* TinderViewController.swift in Sources */,
 				31E607532369653E003B0EF1 /* AppDelegate.swift in Sources */,
+				31E60789236978FB003B0EF1 /* SignUpViewController.swift in Sources */,
 				31E607552369653E003B0EF1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +473,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		31E607582369653E003B0EF1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				31E607592369653E003B0EF1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		31E6075D23696540003B0EF1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,6 +538,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -423,6 +592,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -432,6 +602,7 @@
 		};
 		31E6077A23696540003B0EF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DB6BC56588F9A3D167EA70E /* Pods-DatingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -444,12 +615,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.taq.DatingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		31E6077B23696540003B0EF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5D0E9DF75447148D1EF1270 /* Pods-DatingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -462,12 +634,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.taq.DatingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		31E6077D23696540003B0EF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF87D5CB8003723962808797 /* Pods-DatingAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +663,7 @@
 		};
 		31E6077E23696540003B0EF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5908D9D7903A31490D2766A /* Pods-DatingAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +686,7 @@
 		};
 		31E6078023696540003B0EF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C12250E37C61B11F5E33EE04 /* Pods-DatingApp-DatingAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +707,7 @@
 		};
 		31E6078123696540003B0EF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1A3496408C4148860F67957 /* Pods-DatingApp-DatingAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f5b-QD-H1C">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -44,7 +44,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aea-ji-i9u">
-                                <rect key="frame" x="20" y="84" width="374" height="40"/>
+                                <rect key="frame" x="20" y="128" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="HWn-IR-1eF"/>
                                 </constraints>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
         </scene>
         <!--Tinder View Controller-->
         <scene sceneID="IeK-Ad-ock">
@@ -93,25 +93,110 @@
                     <view key="view" contentMode="scaleToFill" id="hZ2-HH-VBe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vHz-Tf-AQ4">
+                                <rect key="frame" x="87" y="154" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="lWT-0g-tFL"/>
+                                    <constraint firstAttribute="height" constant="240" id="sEm-YY-MKq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEU-lD-0wZ">
+                                <rect key="frame" x="87" y="479" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="eFm-an-jsY"/>
+                                    <constraint firstAttribute="height" constant="64" id="rOI-hf-dR1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="hand.point.left.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IR5-xB-LvQ">
+                                <rect key="frame" x="87" y="383" width="42" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="3m5-9T-YFM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWg-0k-hDr">
+                                <rect key="frame" x="192" y="792" width="30" height="30"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <segue destination="w5B-cM-wbw" kind="show" id="Vun-sU-01c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72u-b1-ECq">
+                                <rect key="frame" x="263" y="479" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="gM6-1T-Zwp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="flame.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PEU-lD-0wZ" firstAttribute="top" secondItem="IR5-xB-LvQ" secondAttribute="bottom" constant="64" id="00L-K6-lG4"/>
+                            <constraint firstItem="72u-b1-ECq" firstAttribute="top" secondItem="vHz-Tf-AQ4" secondAttribute="bottom" constant="85" id="08T-FV-5Ny"/>
+                            <constraint firstItem="5Xq-kH-8Od" firstAttribute="bottom" secondItem="LWg-0k-hDr" secondAttribute="bottom" constant="40" id="7GP-oL-eoO"/>
+                            <constraint firstItem="LWg-0k-hDr" firstAttribute="centerX" secondItem="hZ2-HH-VBe" secondAttribute="centerX" id="JcD-50-6DG"/>
+                            <constraint firstItem="72u-b1-ECq" firstAttribute="trailing" secondItem="vHz-Tf-AQ4" secondAttribute="trailing" id="JkQ-3I-sWA"/>
+                            <constraint firstItem="PEU-lD-0wZ" firstAttribute="top" secondItem="72u-b1-ECq" secondAttribute="top" id="UOM-Jt-GCs"/>
+                            <constraint firstItem="PEU-lD-0wZ" firstAttribute="baseline" secondItem="72u-b1-ECq" secondAttribute="baseline" id="ljH-DG-iKf"/>
+                            <constraint firstItem="PEU-lD-0wZ" firstAttribute="leading" secondItem="IR5-xB-LvQ" secondAttribute="leading" id="mYC-Cm-eKN"/>
+                            <constraint firstItem="PEU-lD-0wZ" firstAttribute="leading" secondItem="5Xq-kH-8Od" secondAttribute="leading" constant="87" id="nbv-iA-U0w"/>
+                            <constraint firstItem="IR5-xB-LvQ" firstAttribute="leading" secondItem="vHz-Tf-AQ4" secondAttribute="leading" id="ncx-Kq-Qeh"/>
+                            <constraint firstItem="5Xq-kH-8Od" firstAttribute="bottom" secondItem="PEU-lD-0wZ" secondAttribute="bottom" constant="319" id="ww2-vM-ccd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5Xq-kH-8Od"/>
                     </view>
                     <navigationItem key="navigationItem" id="5pu-PX-X3Z"/>
+                    <connections>
+                        <outlet property="Go" destination="LWg-0k-hDr" id="sWz-Cd-XCX"/>
+                        <outlet property="avatar" destination="vHz-Tf-AQ4" id="lSU-aL-Q90"/>
+                        <outlet property="dislikeButton" destination="PEU-lD-0wZ" id="rJe-Tu-cf0"/>
+                        <outlet property="likeButton" destination="72u-b1-ECq" id="HIi-dZ-b8D"/>
+                        <outlet property="nameLabel" destination="IR5-xB-LvQ" id="xnn-Fq-PVK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgW-8i-pt1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="814"/>
+            <point key="canvasLocation" x="1008.6956521739131" y="813.61607142857144"/>
+        </scene>
+        <!--My Koloda View Controller-->
+        <scene sceneID="upt-II-mwa">
+            <objects>
+                <viewController id="w5B-cM-wbw" customClass="MyKolodaViewController" customModule="DatingApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EUf-u7-lje" customClass="KolodaView" customModule="Koloda">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zrH-Rn-a4b"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7ig-7h-jH5"/>
+                    <connections>
+                        <outlet property="kolodaView" destination="EUf-u7-lje" id="CRL-jD-1Zb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e8n-20-fnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1907" y="810"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="PfO-ng-rsT">
             <objects>
                 <viewController id="nzH-G4-QtF" customClass="SignUpViewController" customModule="DatingApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ISZ-Xr-4Es">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1m8-gk-pNe">
-                                <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                <rect key="frame" x="10" y="98" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="ekI-OD-krV"/>
                                     <constraint firstAttribute="height" constant="20" id="p7J-b4-2FM"/>
@@ -122,7 +207,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCZ-vJ-fRt">
-                                <rect key="frame" x="20" y="40" width="374" height="40"/>
+                                <rect key="frame" x="20" y="128" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vh9-Pi-emF"/>
                                 </constraints>
@@ -131,7 +216,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-IH-Cnn">
-                                <rect key="frame" x="24" y="330" width="366" height="50"/>
+                                <rect key="frame" x="24" y="384" width="366" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Cb-Xh-Zzc" userLabel="Email Text Field">
                                         <rect key="frame" x="4" y="4" width="358" height="42"/>
@@ -154,7 +239,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ac3-gn-1Eg">
-                                <rect key="frame" x="24" y="420" width="366" height="50"/>
+                                <rect key="frame" x="24" y="474" width="366" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fsu-af-CnX">
                                         <rect key="frame" x="4" y="4" width="358" height="42"/>
@@ -178,7 +263,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKc-OD-aki">
-                                <rect key="frame" x="24" y="502" width="366" height="30"/>
+                                <rect key="frame" x="24" y="556" width="366" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Cyx-NP-qMw"/>
                                 </constraints>
@@ -188,7 +273,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i00-yt-ecL">
-                                <rect key="frame" x="24" y="564" width="366" height="30"/>
+                                <rect key="frame" x="24" y="618" width="366" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="WbC-jc-rz6"/>
                                     <constraint firstAttribute="height" constant="30" id="soO-P9-ltp"/>
@@ -235,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBt-Ia-UJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979.71014492753636" y="126.5625"/>
+            <point key="canvasLocation" x="1889.8550724637682" y="126.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oAh-YZ-GX9">
@@ -255,8 +340,28 @@
             </objects>
             <point key="canvasLocation" x="149.27536231884059" y="813.61607142857144"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VSx-i2-gxc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f5b-QD-H1C" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WRt-BN-uQd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="r2b-Fg-ltT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SYx-cR-PFJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="flame.fill" catalog="system" width="54" height="64"/>
+        <image name="hand.point.left.fill" catalog="system" width="64" height="48"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
     </resources>
 </document>

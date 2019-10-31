@@ -123,8 +123,16 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     
     func presentTinder() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tinder = storyboard.instantiateViewController(withIdentifier: "tinder")
-        self.present(tinder, animated: true, completion: nil)
+        let tinder = storyboard.instantiateViewController(withIdentifier: "tinder") as! TinderViewController
+        self.navigationController?.pushViewController(tinder, animated: true)
     }
     
+//    // ②遷移先ViewControllerのインスタンス取得
+//           let nextView = storyboard.instantiateViewController(withIdentifier: "view2") as! View2ViewController
+//
+//           // ③画面遷移
+//           self.present(nextView, animated: true, completion: nil)
+//    // ③画面遷移（Navigation Controller管理下の場合）
+//    self.navigationController?.pushViewController(nextView, animated: true)
+//       }
 }

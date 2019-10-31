@@ -13,6 +13,13 @@ import Firebase
 
 class TinderViewController: UIViewController {
 
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dislikeButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var Go: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

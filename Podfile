@@ -13,6 +13,8 @@ target 'DatingApp' do
   pod 'Firebase/Core'
   pod 'FBSDKLoginKit'
   pod 'FacebookCore'
+  pod 'Koloda'
+  pod 'Firebase/Database'
 
   target 'DatingAppTests' do
     inherit! :search_paths

@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var titleTextLabel: UILabel!
@@ -25,8 +25,15 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func closeModal(_ sender: Any) {
@@ -116,7 +123,7 @@ class SignUpViewController: UIViewController {
     
     func presentTinder() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tinder = storyboard.instantiateViewController(withIdentifier: "tider")
+        let tinder = storyboard.instantiateViewController(withIdentifier: "tinder")
         self.present(tinder, animated: true, completion: nil)
     }
     

@@ -89,17 +89,18 @@
         <!--Tinder View Controller-->
         <scene sceneID="IeK-Ad-ock">
             <objects>
-                <viewController storyboardIdentifier="tinder" id="s6K-SJ-iyL" customClass="TinderViewController" customModule="DatingApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tinder" id="s6K-SJ-iyL" customClass="TinderViewController" customModule="DatingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZ2-HH-VBe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="5Xq-kH-8Od"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5pu-PX-X3Z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgW-8i-pt1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150" y="814"/>
+            <point key="canvasLocation" x="1010" y="814"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="PfO-ng-rsT">
@@ -129,28 +130,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-IA-GoR">
-                                <rect key="frame" x="24" y="240" width="366" height="50"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P5P-KY-7KA">
-                                        <rect key="frame" x="4" y="4" width="358" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="textfield.Placeholder" value="Your name"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="KkR-DV-P1s"/>
-                                    <constraint firstItem="P5P-KY-7KA" firstAttribute="leading" secondItem="fWo-IA-GoR" secondAttribute="leading" constant="4" id="LOB-ro-eRl"/>
-                                    <constraint firstItem="P5P-KY-7KA" firstAttribute="centerX" secondItem="fWo-IA-GoR" secondAttribute="centerX" id="Qmu-Gq-VIK"/>
-                                    <constraint firstAttribute="trailing" secondItem="P5P-KY-7KA" secondAttribute="trailing" constant="4" id="bm0-nd-eke"/>
-                                    <constraint firstAttribute="bottom" secondItem="P5P-KY-7KA" secondAttribute="bottom" constant="4" id="kyu-q2-1SC"/>
-                                    <constraint firstItem="P5P-KY-7KA" firstAttribute="top" secondItem="fWo-IA-GoR" secondAttribute="top" constant="4" id="siO-3m-Tws"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-IH-Cnn">
                                 <rect key="frame" x="24" y="330" width="366" height="50"/>
                                 <subviews>
@@ -232,11 +211,8 @@
                             <constraint firstItem="EKc-OD-aki" firstAttribute="top" secondItem="Ac3-gn-1Eg" secondAttribute="bottom" constant="32" id="LKV-AJ-nfl"/>
                             <constraint firstItem="Ac3-gn-1Eg" firstAttribute="leading" secondItem="uyH-Cp-cZ4" secondAttribute="leading" constant="24" id="W4H-5f-1gf"/>
                             <constraint firstItem="uyH-Cp-cZ4" firstAttribute="bottom" secondItem="i00-yt-ecL" secondAttribute="bottom" constant="214" id="bFm-Pd-UVR"/>
-                            <constraint firstItem="bGx-IH-Cnn" firstAttribute="top" secondItem="fWo-IA-GoR" secondAttribute="bottom" constant="40" id="cm4-2K-SAV"/>
                             <constraint firstItem="1m8-gk-pNe" firstAttribute="top" secondItem="uyH-Cp-cZ4" secondAttribute="top" constant="10" id="eKG-2b-wXu"/>
-                            <constraint firstItem="fWo-IA-GoR" firstAttribute="leading" secondItem="uyH-Cp-cZ4" secondAttribute="leading" constant="24" id="fhE-ll-8Qa"/>
                             <constraint firstItem="uyH-Cp-cZ4" firstAttribute="trailing" secondItem="i00-yt-ecL" secondAttribute="trailing" constant="24" id="gvv-Q6-WHJ"/>
-                            <constraint firstItem="uyH-Cp-cZ4" firstAttribute="trailing" secondItem="fWo-IA-GoR" secondAttribute="trailing" constant="24" id="hnY-aP-2RO"/>
                             <constraint firstItem="uyH-Cp-cZ4" firstAttribute="trailing" secondItem="bGx-IH-Cnn" secondAttribute="trailing" constant="24" id="ljJ-92-t7A"/>
                             <constraint firstItem="Ac3-gn-1Eg" firstAttribute="top" secondItem="bGx-IH-Cnn" secondAttribute="bottom" constant="40" id="pZy-nm-dL9"/>
                             <constraint firstItem="1m8-gk-pNe" firstAttribute="leading" secondItem="uyH-Cp-cZ4" secondAttribute="leading" constant="10" id="tz7-Vp-G86"/>
@@ -250,8 +226,6 @@
                         <outlet property="closeButton" destination="1m8-gk-pNe" id="hGS-58-N4v"/>
                         <outlet property="emailContainterView" destination="bGx-IH-Cnn" id="h7s-LD-Qe8"/>
                         <outlet property="emailTextField" destination="0Cb-Xh-Zzc" id="SuF-5p-rVH"/>
-                        <outlet property="fullnameContainterView" destination="fWo-IA-GoR" id="Cag-A5-G9K"/>
-                        <outlet property="fullnameTextField" destination="P5P-KY-7KA" id="2pN-Cu-2j0"/>
                         <outlet property="passwordContainterView" destination="Ac3-gn-1Eg" id="98O-tY-sCt"/>
                         <outlet property="passwordTextField" destination="Fsu-af-CnX" id="4Lh-ph-Okd"/>
                         <outlet property="signInButton" destination="i00-yt-ecL" id="R5R-q1-sjt"/>
@@ -262,6 +236,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBt-Ia-UJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="126.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oAh-YZ-GX9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v3E-I8-sy1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j01-kw-NtJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="s6K-SJ-iyL" kind="relationship" relationship="rootViewController" id="Jt3-W1-1fZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8Q-JW-OB1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149.27536231884059" y="813.61607142857144"/>
         </scene>
     </scenes>
     <resources>

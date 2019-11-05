@@ -10,24 +10,21 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FacebookCore
+import FirebaseFirestore
+import Firebase
 
 class ViewController: UIViewController{
+    
+    var db: Firestore!
+    
     @IBOutlet weak var signInFacebookButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var termsOfServiceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let loginButton = FBLoginButton()
-        loginButton.center = view.center
-        view.addSubview(loginButton)
     }
-   
-    
-   
-    
-    
-
 }
+
+
 

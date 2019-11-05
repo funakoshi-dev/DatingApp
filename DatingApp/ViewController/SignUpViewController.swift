@@ -13,9 +13,6 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var titleTextLabel: UILabel!
-    @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var fullnameContainterView: UIView!
-    @IBOutlet weak var fullnameTextField: UITextField!
     @IBOutlet weak var emailContainterView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordContainterView: UIView!
@@ -34,10 +31,6 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         // キーボードを閉じる
         textField.resignFirstResponder()
         return true
-    }
-    
-    @IBAction func closeModal(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func signupButtonTapped(_ sender: Any) {
@@ -78,7 +71,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 self.signUpErrAlert(_error)
             } else {
                 print("SignUp success")
-                self.presentTinder()
+                self.presentAfterLogin()
             }
         }
     }
@@ -89,7 +82,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 self.signInErrAlert(_error)
             } else {
                 print("SignIn success")
-                self.presentTinder()
+                self.presentAfterLogin()
             }
         }
     }
@@ -121,10 +114,10 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
-    func presentTinder() {
+    func presentAfterLogin() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tinder = storyboard.instantiateViewController(withIdentifier: "tinder") as! TinderViewController
-        self.navigationController?.pushViewController(tinder, animated: true)
+        let profile = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+        self.navigationController?.pushViewController(profile, animated: true)
     }
     
 //    // ②遷移先ViewControllerのインスタンス取得

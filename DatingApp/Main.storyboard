@@ -31,6 +31,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="goNextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zQT-mm-as8"/>
                                     <segue destination="nzH-G4-QtF" kind="show" id="ZXT-0r-3TA"/>
                                 </connections>
                             </button>
@@ -93,18 +94,6 @@
                     <view key="view" contentMode="scaleToFill" id="EUf-u7-lje" customClass="KolodaView" customModule="Koloda">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Rl-pm-Ac6">
-                                <rect key="frame" x="28" y="766" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Bye"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFc-QI-FVU">
-                                <rect key="frame" x="106" y="832" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Hi"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="zrH-Rn-a4b"/>
                     </view>
@@ -120,7 +109,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="PfO-ng-rsT">
             <objects>
-                <viewController id="nzH-G4-QtF" customClass="SignUpViewController" customModule="DatingApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUp" id="nzH-G4-QtF" customClass="SignUpViewController" customModule="DatingApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ISZ-Xr-4Es">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

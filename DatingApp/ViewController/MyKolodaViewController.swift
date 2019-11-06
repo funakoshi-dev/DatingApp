@@ -8,18 +8,29 @@
 
 import UIKit
 import Koloda
+import FirebaseAuth
+import Firebase
+import FirebaseStorage
+import FirebaseFirestore
 
 class MyKolodaViewController: UIViewController {
     
-    let items = [ "Red", "Green", "Blue", "Black", "White", "Orange", "Mageda", "Yellow", "Gray" ]
+    let starsRef = Storage.storage().reference().child("avatar")
+    
+    func printRef(){
+        print(starsRef)
+        
+    }
+   
     
     @IBOutlet weak var kolodaView: KolodaView!
-    var imageNameArray = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", ]
+    
+    var imageNameArray = ["1.jpg", "facebook.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "TinderUI Sample"
+        setBarButton()
+        self.title = "Tinder"
         self.view.backgroundColor = UIColor.systemPink
 
         kolodaView.dataSource = self
@@ -27,6 +38,7 @@ class MyKolodaViewController: UIViewController {
         kolodaView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         kolodaView.center = self.view.center
         self.view.reloadInputViews()
+        printRef()
     }
 }
 
@@ -34,7 +46,7 @@ class MyKolodaViewController: UIViewController {
 extension MyKolodaViewController: KolodaViewDataSource {
     
     public func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return items.count
+        return imageNameArray.count
     }
     
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -44,18 +56,15 @@ extension MyKolodaViewController: KolodaViewDataSource {
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         
 //        // Card.
-//        let view = UIView()
+        let view = UIView()
 //        view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-//        view.layer.backgroundColor = UIColor.systemPink.cgColor
-//        view.layer.shadowColor = UIColor.black.cgColor
-//        view.layer.shadowOpacity = 0.2
-//        view.layer.shadowOffset = CGSize(width: 0, height: 1.5)
-        // Add pictures
-//        let imageView = UIImageView(frame: koloda.bounds)
-//        imageView.contentMode = .scaleAspectFit
-//        imageView.image = UIImage(named: imageNameArray[index])
-////        koloda.addSubview(imageView)
-//        imageView.backgroundColor = UIColor.systemPink
+//        view.layer.masksToBounds = true
+//        view.layer.cornerRadius = 20
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.6
+        view.layer.shadowOffset = CGSize(width: 2, height: 2)
+        view.layer.shadowRadius = 2
+        
         
         // Add a label.
 //        let label = UILabel()
@@ -65,10 +74,14 @@ extension MyKolodaViewController: KolodaViewDataSource {
 //        view.addSubview(label)
         let color = generateRandomColor()
         let imageView = UIImageView(frame: koloda.bounds)
-        
+//        imageView.layer.shadowColor = UIColor.black.cgColor
+//        imageView.layer.shadowOpacity = 0.6
+//        imageView.layer.shadowOffset = CGSize(width: 1, height: 1.5)
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 30
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: imageNameArray[index])
-        koloda.addSubview(imageView)
+//        koloda.addSubview(imageView)
         imageView.backgroundColor = color
         return imageView
         
@@ -97,6 +110,31 @@ extension MyKolodaViewController: KolodaViewDelegate {
       let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
             
       return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
+    }
+    
+    @objc func presentProfile() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let profile = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+        self.navigationController?.pushViewController(profile, animated: true)
+    }
+    
+    
+    func setBarButton(){
+        let rightBarButton = UIBarButtonItem(
+            title: "chat",
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        let leftBarButton = UIBarButtonItem(
+            title: "設定",
+            style: .plain,
+            target: self,
+            action: #selector(presentProfile)
+        )
+        self.navigationItem.leftBarButtonItem = leftBarButton
     }
 }
 

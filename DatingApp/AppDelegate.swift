@@ -9,19 +9,16 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
-        checkUserLogin()
-        
-        let db = Firestore.firestore()
 //        FacebookLogin
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
   
@@ -53,28 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppEvents.activateApp()
     }
     
-
-}
-
-extension AppDelegate{
     
-    func checkUserLogin() {
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-
-            if user == nil {
-                self.goToMyKoloda()
-            } else {
-                
-            }
-
-            
-        }
-    }
-    
-    func goToMyKoloda () {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let koloda = storyboard.instantiateViewController(withIdentifier: "koloda")
-        window?.rootViewController = koloda
-
-    }
 }
+    
+    
+

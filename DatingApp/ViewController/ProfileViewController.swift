@@ -17,6 +17,7 @@ import SDWebImage
 
 class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 //  Firebase Auth関連
+  
     let user = Auth.auth().currentUser
     let userEmail = Auth.auth().currentUser?.email
     let userID = Auth.auth().currentUser?.uid
@@ -39,20 +40,26 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
     
     override func viewDidLoad() {
             super.viewDidLoad()
-            reset()
-            showEmail()
-            setImage(userId: userID!, imageView: avatar)
+         Auth.auth().addStateDidChangeListener { (auth, user) in
+        
+          if((user) != nil){
             
-           
-//    //        バーボタン[Go Tinder]を追加
-//            let rightBarButton = UIBarButtonItem(
-//                title: "Go Tinder",
-//                style: .plain,
-//                target: self,
-//                action: #selector(presentKoloda)
-//            )
-//            self.navigationItem.rightBarButtonItem = rightBarButton
+          }else{
+            print("Profile : Not Logged in")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let top = storyboard.instantiateViewController(withIdentifier: "top") as! ViewController
+            self.view.window?.rootViewController = top
+          }
+        }
+        self.title = "設定"
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        self.navigationItem.leftBarButtonItem?.title = "LogOut"
+        reset()
+        showEmail()
+        setImage(userId: userID!, imageView: avatar)
     }
+    
+    
     
 //    アバタータッチしたらアルバムから写真選択
     @IBAction func avatarTapButton(_ sender: Any) {
@@ -111,13 +118,6 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
         self.progress.alpha = 1
     }
     
-    //    Kolodaビューへ遷移　？？なぜobjc付くか不明
-    @objc func presentKoloda() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let koloda = storyboard.instantiateViewController(withIdentifier: "koloda") as! MyKolodaViewController
-        self.navigationController?.pushViewController(koloda, animated: true)
-    }
-
 //    いつものキーボード閉じるやつ
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // キーボードを閉じる
@@ -146,6 +146,19 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
         }
     }
     
+    //    Kolodaビューへ遷移　？？なぜobjc付くか不明
+    @objc func presentKoloda() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let koloda = storyboard.instantiateViewController(withIdentifier: "koloda") as! MyKolodaViewController
+        self.navigationController?.pushViewController(koloda, animated: true)
+    }
+    
+    @objc func presentSignUp() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signUp = storyboard.instantiateViewController(withIdentifier: "signUp") as! SignUpViewController
+        self.present(signUp, animated: true, completion: nil)
+    }
+    
     func setBarButton(){
         let rightBarButton = UIBarButtonItem(
             title: "Go Tinder",
@@ -154,7 +167,30 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
             action: #selector(presentKoloda)
         )
         self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        let leftBarButton = UIBarButtonItem(
+            title: "ログアウト",
+            style: .plain,
+            target: self,
+            action: #selector(logOut)
+        )
+        self.navigationItem.leftBarButtonItem = leftBarButton
     }
+    
+    @objc func logOut(){
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let top = storyboard.instantiateViewController(withIdentifier: "top") as! ViewController
+            self.view.window?.rootViewController = top
+
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+    }
+    
+    
         
         
 }

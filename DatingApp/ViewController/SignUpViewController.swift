@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class SignUpViewController: UIViewController,UITextFieldDelegate {
 
+    
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var emailContainterView: UIView!
@@ -25,7 +26,18 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+                
+            if((user) != nil){
+                let koloda = self.storyboard?.instantiateViewController(identifier: "koloda") as! MyKolodaViewController
+                    self.navigationController?.pushViewController(koloda, animated: false)
+            }else{
+                print("SignVC : Not Logged in")
+            }
+        }
     }
+    
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // キーボードを閉じる
@@ -71,7 +83,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 self.signUpErrAlert(_error)
             } else {
                 print("SignUp success")
-                self.presentAfterLogin()
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -82,7 +94,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 self.signInErrAlert(_error)
             } else {
                 print("SignIn success")
-                self.presentAfterLogin()
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -114,11 +126,11 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
-    func presentAfterLogin() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let profile = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-        self.navigationController?.pushViewController(profile, animated: true)
-    }
+//    func presentKoloda() {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let profile = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+//        self.navigationController?.pushViewController(profile, animated: true)
+//    }
     
 //    // ②遷移先ViewControllerのインスタンス取得
 //           let nextView = storyboard.instantiateViewController(withIdentifier: "view2") as! View2ViewController

@@ -16,6 +16,7 @@ target 'DatingApp' do
   pod 'FacebookCore'
   pod 'Koloda'
   pod 'FirebaseUI/Storage'
+  pod 'SDWebImage'
   
   
 

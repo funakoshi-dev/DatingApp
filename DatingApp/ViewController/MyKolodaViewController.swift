@@ -12,16 +12,9 @@ import FirebaseAuth
 import Firebase
 import FirebaseStorage
 import FirebaseFirestore
+import SDWebImage
 
 class MyKolodaViewController: UIViewController {
-    
-    let starsRef = Storage.storage().reference().child("avatar")
-    
-    func printRef(){
-        print(starsRef)
-        
-    }
-   
     
     @IBOutlet weak var kolodaView: KolodaView!
     
@@ -38,7 +31,6 @@ class MyKolodaViewController: UIViewController {
         kolodaView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         kolodaView.center = self.view.center
         self.view.reloadInputViews()
-        printRef()
     }
 }
 
@@ -80,7 +72,7 @@ extension MyKolodaViewController: KolodaViewDataSource {
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 30
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: imageNameArray[index])
+        imageView.sd_setImage(with: URL(string:"https://firebasestorage.googleapis.com/v0/b/auth-fa967.appspot.com/o/avatar%2FvX28mbRCkET32CRVnHddReErdDj1?alt=media&token=eff1a682-7fd8-49e7-bd12-29457e32ebd5"), placeholderImage: UIImage(named: "taq"))
 //        koloda.addSubview(imageView)
         imageView.backgroundColor = color
         return imageView

@@ -31,16 +31,33 @@ class ViewController: UIViewController{
         
           if((user) != nil){
             print("vc to koloda")
-            let vc = self.storyboard?.instantiateViewController(identifier: "koloda") as! MyKolodaViewController
-            self.navigationController?.pushViewController(vc, animated: false)
-            //            以下を使うとNavigationViewにならないのでボツ
-            //            self.view.window?.rootViewController = vc
+            self.presentKoloda()
+//            let vc = self.storyboard?.instantiateViewController(identifier: "koloda") as! MyKolodaViewController
+//            self.navigationController?.pushViewController(vc, animated: false)
+//            //            以下を使うとNavigationViewにならないのでボツ
+//            //            self.view.window?.rootViewController = vc
           }else{
-              self.view.window?.rootViewController = self
+//              self.view.window?.rootViewController = self
             print("Not Logged in")
           }
         }
     }
+//    //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        ncmbLoginCheck()
+//    }
+//    // NCMBログインチェック
+//    func ncmbLoginCheck(){
+//        if (Auth.auth().currentUser?.uid != nil) {
+//            print("ログイン済み")
+//            presentKoloda()
+//
+//        } else {
+//            print("未ログイン")
+//        }
+//    }
+    //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
     
     
     @IBAction func goNextButton(_ sender: Any) {
@@ -52,6 +69,14 @@ class ViewController: UIViewController{
            let signUp = storyboard.instantiateViewController(withIdentifier: "signUp") as! SignUpViewController
            self.present(signUp, animated: true, completion: nil)
     }
+    
+    @objc func presentKoloda() {
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           let koloda = storyboard.instantiateViewController(withIdentifier: "koloda") as! MyKolodaViewController
+           self.navigationController?.pushViewController(koloda, animated: true)
+    }
+    
+    
 }
     
 

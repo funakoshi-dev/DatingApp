@@ -15,7 +15,7 @@ import FirebaseStorage
 import SDWebImage
 
 
-class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
 //  Firebase Auth関連
   
     let user = Auth.auth().currentUser
@@ -25,6 +25,9 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
     var imagePicker = UIImagePickerController()
 //  Firebase firestore(DB)関連
     let db = Firestore.firestore()
+    
+    var dlUrl:String = ""
+    
 //  Firebase Storage関連
     
 
@@ -37,6 +40,7 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
     @IBOutlet weak var yourNameText: UITextField!
     @IBOutlet weak var yourGender: UILabel!
     @IBOutlet weak var yourGenderSwitch: UISegmentedControl!
+    @IBOutlet weak var hairAmount: UISegmentedControl!
     
     override func viewDidLoad() {
             super.viewDidLoad()
@@ -57,9 +61,26 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
         reset()
         showEmail()
         setImage(userId: userID!, imageView: avatar)
+        self.yourNameText.delegate = self
     }
     
     
+    
+    
+    @IBAction func hozonTapped(_ sender: Any) {
+            db.collection("users").document("\(userID!)").setData([
+            "YRNAME": yourNameText.text!,
+            "UID": userID!,
+            "DLURL": dlUrl,
+            "HAIR": hairAmount.selectedSegmentIndex
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added")
+            }
+        }
+    }
     
 //    アバタータッチしたらアルバムから写真選択
     @IBAction func avatarTapButton(_ sender: Any) {
@@ -88,7 +109,12 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
                     return
                 }
                     print("I got this back \(String(describing: metadata))")
+            uploadRef.downloadURL { (url, error) in
+//                print("downloadURL is \(url!)")
+                self.dlUrl = url?.absoluteString ?? ""
+                print("downloadURL is \(self.dlUrl)")
             }
+        }
 //        送る処理の経過観察とプログレスバー表示
         taskRefernce.observe(.progress){[weak self](SnapshotMetadata) in
             self?.progress.isHidden = false
@@ -109,6 +135,7 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
         uploadButtonTapped(AnyClass.self)
         reset()
         setBarButton()
+        
     }
 
 //   プログレスバーはリセットしないと２回目映らない。
@@ -183,7 +210,7 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
           try firebaseAuth.signOut()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let top = storyboard.instantiateViewController(withIdentifier: "top") as! ViewController
-            self.view.window?.rootViewController = top
+            self.navigationController?.pushViewController(top, animated: true)
 
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)

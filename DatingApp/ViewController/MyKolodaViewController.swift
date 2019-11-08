@@ -25,7 +25,7 @@ class MyKolodaViewController: UIViewController {
     
     @IBOutlet weak var kolodaView: KolodaView!
     
-    var imageNameArray = ["1.jpg", "facebook.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", ]
+    var imageNameArray = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +136,22 @@ extension MyKolodaViewController: KolodaViewDelegate {
         )
         self.navigationItem.leftBarButtonItem = leftBarButton
     }
+    
+//    func setImage(userId: String, imageView: UIImageView?){
+//        let storageRef = Storage.storage().reference().child("avatar/\(userId)")
+//
+//        storageRef.downloadURL { url, error in
+//          guard let url = url
+//            else {
+//                print("There are no image on Fire Storage")
+//                return
+//            }
+//          imageView?.sd_setImage(with: url, placeholderImage: nil)
+//          let urlString = NSURL(
+//            imageNameArray.append(urlString)
+//
+//        }
+//    }
 }
 
 

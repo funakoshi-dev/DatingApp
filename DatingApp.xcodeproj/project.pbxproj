@@ -10,6 +10,7 @@
 		05E11CDAE0FE5AF3C2BCBAB3 /* Pods_DatingApp_DatingAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7DDE20CE0FE64F7BB212A1 /* Pods_DatingApp_DatingAppUITests.framework */; };
 		1E1FE1F9EB08E3F95C4692FF /* Pods_DatingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57533A72935A51D9E507A4DF /* Pods_DatingAppTests.framework */; };
 		31224779236AC3B400BA6117 /* MyKolodaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31224778236AC3B400BA6117 /* MyKolodaViewController.swift */; };
+		31528E072372C63800DA2BB2 /* TinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31528E062372C63800DA2BB2 /* TinderViewController.swift */; };
 		31B9AFF0236D6F0C00D8ECB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9AFEF236D6F0C00D8ECB9 /* ProfileViewController.swift */; };
 		31E607532369653E003B0EF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E607522369653E003B0EF1 /* AppDelegate.swift */; };
 		31E607552369653E003B0EF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E607542369653E003B0EF1 /* SceneDelegate.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		31224778236AC3B400BA6117 /* MyKolodaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKolodaViewController.swift; sourceTree = "<group>"; };
+		31528E062372C63800DA2BB2 /* TinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewController.swift; sourceTree = "<group>"; };
 		31B9AFEF236D6F0C00D8ECB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		31E6074F2369653E003B0EF1 /* DatingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E607522369653E003B0EF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				31E607562369653E003B0EF1 /* ViewController.swift */,
 				31E60788236978FB003B0EF1 /* SignUpViewController.swift */,
+				31528E062372C63800DA2BB2 /* TinderViewController.swift */,
 				31B9AFEF236D6F0C00D8ECB9 /* ProfileViewController.swift */,
 				31224778236AC3B400BA6117 /* MyKolodaViewController.swift */,
 			);
@@ -445,6 +448,7 @@
 			files = (
 				31E607902369D07D003B0EF1 /* UIViewController+Alert.swift in Sources */,
 				31224779236AC3B400BA6117 /* MyKolodaViewController.swift in Sources */,
+				31528E072372C63800DA2BB2 /* TinderViewController.swift in Sources */,
 				31E607572369653E003B0EF1 /* ViewController.swift in Sources */,
 				31E607532369653E003B0EF1 /* AppDelegate.swift in Sources */,
 				31E60789236978FB003B0EF1 /* SignUpViewController.swift in Sources */,

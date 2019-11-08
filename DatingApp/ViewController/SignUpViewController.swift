@@ -26,16 +26,18 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-                
-            if((user) != nil){
-                let koloda = self.storyboard?.instantiateViewController(identifier: "koloda") as! MyKolodaViewController
-                    self.navigationController?.pushViewController(koloda, animated: false)
-            }else{
-                print("SignVC : Not Logged in")
-            }
-        }
+//        Auth.auth().addStateDidChangeListener { (auth, user) in
+//                
+//            if((user) != nil){
+//                let koloda = self.storyboard?.instantiateViewController(identifier: "koloda") as! MyKolodaViewController
+//                    self.navigationController?.pushViewController(koloda, animated: false)
+//            }else{
+//                print("SignVC : Not Logged in")
+//            }
+//        }
     }
+    
+    
     
 
     
@@ -124,6 +126,12 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
             }
             self.singleAlert(title: "ログインできません", message: message)
         }
+    }
+    
+    @objc func presentKoloda() {
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           let koloda = storyboard.instantiateViewController(withIdentifier: "koloda") as! MyKolodaViewController
+           self.navigationController?.pushViewController(koloda, animated: true)
     }
     
 //    func presentKoloda() {

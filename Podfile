@@ -12,8 +12,6 @@ target 'DatingApp' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Messaging'
   pod 'Firebase/Core'
-  pod 'FBSDKLoginKit'
-  pod 'FacebookCore'
   pod 'Koloda'
   pod 'FirebaseUI/Storage'
   pod 'SDWebImage'

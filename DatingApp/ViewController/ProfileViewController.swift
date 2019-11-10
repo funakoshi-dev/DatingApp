@@ -1,10 +1,4 @@
-//
-//  ProfileViewController.swift
-//  DatingApp
-//
-//  Created by Taku Funakoshi on 2019/11/02.
-//  Copyright © 2019 Taku Funakoshi. All rights reserved.
-//
+
 
 import UIKit
 import FirebaseAuth
@@ -44,23 +38,15 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
     
     override func viewDidLoad() {
             super.viewDidLoad()
-         Auth.auth().addStateDidChangeListener { (auth, user) in
+         
         
-          if((user) != nil){
-            
-          }else{
-            print("Profile : Not Logged in")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let top = storyboard.instantiateViewController(withIdentifier: "top") as! ViewController
-            self.view.window?.rootViewController = top
-          }
-        }
         self.title = "設定"
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         self.navigationItem.leftBarButtonItem?.title = "LogOut"
         reset()
         showEmail()
         setImage(userId: userID!, imageView: avatar)
+        setBarButton()
         self.yourNameText.delegate = self
     }
     
@@ -110,9 +96,8 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
                 }
                     print("I got this back \(String(describing: metadata))")
             uploadRef.downloadURL { (url, error) in
-//                print("downloadURL is \(url!)")
                 self.dlUrl = url?.absoluteString ?? ""
-                print("downloadURL is \(self.dlUrl)")
+//                print("downloadURL is \(self.dlUrl)")
             }
         }
 //        送る処理の経過観察とプログレスバー表示
@@ -134,8 +119,6 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
         self.dismiss(animated:true)
         uploadButtonTapped(AnyClass.self)
         reset()
-        setBarButton()
-        
     }
 
 //   プログレスバーはリセットしないと２回目映らない。
@@ -167,7 +150,7 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
                 print("There are no image on Fire Storage")
                 return
             }
-          imageView?.sd_setImage(with: url, placeholderImage: nil)
+          imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "noimage"))
           self.setBarButton()
           
         }
@@ -180,10 +163,11 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
         self.navigationController?.pushViewController(koloda, animated: true)
     }
     
-    @objc func presentSignUp() {
+    @objc func presentTop() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let signUp = storyboard.instantiateViewController(withIdentifier: "signUp") as! SignUpViewController
-        self.present(signUp, animated: true, completion: nil)
+        let top = storyboard.instantiateViewController(withIdentifier: "NC1") as! UINavigationController
+        top.modalPresentationStyle = .fullScreen
+        self.present(top, animated: true)
     }
     
     func setBarButton(){
@@ -207,13 +191,24 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
     @objc func logOut(){
         let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let top = storyboard.instantiateViewController(withIdentifier: "top") as! ViewController
-            self.navigationController?.pushViewController(top, animated: true)
+            try firebaseAuth.signOut()
+            presentTop()
 
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
+        }
+    }
+    
+    func getDocument() {
+        let docRef = db.collection("users").document("\(userID)")
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
         }
     }
     

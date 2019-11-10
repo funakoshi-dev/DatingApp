@@ -12,6 +12,7 @@
 		31224779236AC3B400BA6117 /* MyKolodaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31224778236AC3B400BA6117 /* MyKolodaViewController.swift */; };
 		31528E072372C63800DA2BB2 /* TinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31528E062372C63800DA2BB2 /* TinderViewController.swift */; };
 		31B9AFF0236D6F0C00D8ECB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9AFEF236D6F0C00D8ECB9 /* ProfileViewController.swift */; };
+		31DECBF02376B60F009C4130 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DECBEF2376B60F009C4130 /* AuthManager.swift */; };
 		31E607532369653E003B0EF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E607522369653E003B0EF1 /* AppDelegate.swift */; };
 		31E607552369653E003B0EF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E607542369653E003B0EF1 /* SceneDelegate.swift */; };
 		31E607572369653E003B0EF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E607562369653E003B0EF1 /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		31224778236AC3B400BA6117 /* MyKolodaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKolodaViewController.swift; sourceTree = "<group>"; };
 		31528E062372C63800DA2BB2 /* TinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewController.swift; sourceTree = "<group>"; };
 		31B9AFEF236D6F0C00D8ECB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		31DECBEF2376B60F009C4130 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		31E6074F2369653E003B0EF1 /* DatingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E607522369653E003B0EF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31E607542369653E003B0EF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				31E6078E2369D044003B0EF1 /* Extension */,
 				31E607522369653E003B0EF1 /* AppDelegate.swift */,
 				31E607542369653E003B0EF1 /* SceneDelegate.swift */,
+				31DECBEF2376B60F009C4130 /* AuthManager.swift */,
 				31B9AFEE236D42C600D8ECB9 /* ViewController */,
 				31E60786236978C4003B0EF1 /* Main.storyboard */,
 				31E6078A2369A6D3003B0EF1 /* GoogleService-Info.plist */,
@@ -447,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31E607902369D07D003B0EF1 /* UIViewController+Alert.swift in Sources */,
+				31DECBF02376B60F009C4130 /* AuthManager.swift in Sources */,
 				31224779236AC3B400BA6117 /* MyKolodaViewController.swift in Sources */,
 				31528E072372C63800DA2BB2 /* TinderViewController.swift in Sources */,
 				31E607572369653E003B0EF1 /* ViewController.swift in Sources */,

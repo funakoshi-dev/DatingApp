@@ -1,10 +1,3 @@
-//
-//  MyKolodaViewController.swift
-//  DatingApp
-//
-//  Created by Taku Funakoshi on 2019/10/31.
-//  Copyright © 2019 Taku Funakoshi. All rights reserved.
-//
 
 import UIKit
 import Koloda
@@ -12,18 +5,21 @@ import FirebaseAuth
 import Firebase
 import FirebaseStorage
 import FirebaseFirestore
-import SDWebImage
+//import SDWebImage
+import FirebaseUI
 
 class MyKolodaViewController: UIViewController {
     
     @IBOutlet weak var kolodaView: KolodaView!
+    let db = Firestore.firestore()
     
-    var imageNameArray = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", ]
+    var imageNameArray: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBarButton()
         self.title = "Tinder"
+        setBarButton()
+        
         self.view.backgroundColor = UIColor.systemPink
 
         kolodaView.dataSource = self
@@ -31,6 +27,26 @@ class MyKolodaViewController: UIViewController {
         kolodaView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         kolodaView.center = self.view.center
         self.view.reloadInputViews()
+        getMultiple()
+    }
+//    ■■■これでFIrestoreのユーザー情報を一括入手。
+    func getMultiple() {
+        // [START get_multiple]
+        db.collection("users").order(by: "HAIR")
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+//                        print("getMultiple():\(document.documentID) => \(document.data())")
+                        let data = document.data()
+                        let imageUrl = data["DLURL"] as? String
+                        guard let url = imageUrl else { return }
+                        self.imageNameArray.append(url)
+                    }
+                    self.kolodaView.reloadData()
+                }
+        }
     }
 }
 
@@ -46,7 +62,7 @@ extension MyKolodaViewController: KolodaViewDataSource {
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        
+        print("card No:\(index)")
 //        // Card.
         let view = UIView()
 //        view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
@@ -72,7 +88,8 @@ extension MyKolodaViewController: KolodaViewDataSource {
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 30
         imageView.contentMode = .scaleAspectFit
-        imageView.sd_setImage(with: URL(string:"https://firebasestorage.googleapis.com/v0/b/auth-fa967.appspot.com/o/avatar%2FvX28mbRCkET32CRVnHddReErdDj1?alt=media&token=eff1a682-7fd8-49e7-bd12-29457e32ebd5"), placeholderImage: UIImage(named: "taq"))
+//      ■■■■テストとして特定のURLを入れた。これをFirestoreのユーザーごとのURLにしたい■■■
+        imageView.sd_setImage(with: URL(string:imageNameArray[index]), placeholderImage: UIImage(named: "taq"))
 //        koloda.addSubview(imageView)
         imageView.backgroundColor = color
         return imageView
@@ -91,7 +108,7 @@ extension MyKolodaViewController: KolodaViewDelegate {
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         print("Finish cards.")
         //シャッフル
-        imageNameArray = imageNameArray.shuffled()
+        
         //リスタート
         koloda.resetCurrentCardIndex()
     }
@@ -129,21 +146,6 @@ extension MyKolodaViewController: KolodaViewDelegate {
         self.navigationItem.leftBarButtonItem = leftBarButton
     }
     
-//    func setImage(userId: String, imageView: UIImageView?){
-//        let storageRef = Storage.storage().reference().child("avatar/\(userId)")
-//
-//        storageRef.downloadURL { url, error in
-//          guard let url = url
-//            else {
-//                print("There are no image on Fire Storage")
-//                return
-//            }
-//          imageView?.sd_setImage(with: url, placeholderImage: nil)
-//          let urlString = NSURL(
-//            imageNameArray.append(urlString)
-//
-//        }
-//    }
 }
 
 

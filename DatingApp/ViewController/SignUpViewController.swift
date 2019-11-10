@@ -1,10 +1,3 @@
-//
-//  SignUpViewController.swift
-//  DatingApp
-//
-//  Created by Taku Funakoshi on 2019/10/30.
-//  Copyright © 2019 Taku Funakoshi. All rights reserved.
-//
 
 import UIKit
 import FirebaseAuth
@@ -26,20 +19,10 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-//        Auth.auth().addStateDidChangeListener { (auth, user) in
-//                
-//            if((user) != nil){
-//                let koloda = self.storyboard?.instantiateViewController(identifier: "koloda") as! MyKolodaViewController
-//                    self.navigationController?.pushViewController(koloda, animated: false)
-//            }else{
-//                print("SignVC : Not Logged in")
-//            }
-//        }
+        if AuthManager().isLogin() {
+            self.presentKoloda()
+        } else {}
     }
-    
-    
-    
-
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // キーボードを閉じる
@@ -85,7 +68,8 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 self.signUpErrAlert(_error)
             } else {
                 print("SignUp success")
-                self.dismiss(animated: true, completion: nil)
+//                self.dismiss(animated: true, completion: nil)
+                self.presentKoloda()
             }
         }
     }
@@ -96,7 +80,8 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 self.signInErrAlert(_error)
             } else {
                 print("SignIn success")
-                self.dismiss(animated: true, completion: nil)
+//                self.dismiss(animated: true, completion: nil)
+                self.presentKoloda()
             }
         }
     }
@@ -129,23 +114,10 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     }
     
     @objc func presentKoloda() {
-           let storyboard = UIStoryboard(name: "Main", bundle: nil)
-           let koloda = storyboard.instantiateViewController(withIdentifier: "koloda") as! MyKolodaViewController
-           self.navigationController?.pushViewController(koloda, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let koloda = storyboard.instantiateViewController(withIdentifier: "NC2") as! UINavigationController
+        koloda.modalPresentationStyle = .fullScreen
+        self.present(koloda, animated: true)
     }
     
-//    func presentKoloda() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let profile = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-//        self.navigationController?.pushViewController(profile, animated: true)
-//    }
-    
-//    // ②遷移先ViewControllerのインスタンス取得
-//           let nextView = storyboard.instantiateViewController(withIdentifier: "view2") as! View2ViewController
-//
-//           // ③画面遷移
-//           self.present(nextView, animated: true, completion: nil)
-//    // ③画面遷移（Navigation Controller管理下の場合）
-//    self.navigationController?.pushViewController(nextView, animated: true)
-//       }
 }
